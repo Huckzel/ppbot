@@ -7,13 +7,16 @@ file: ppbot.py
 A simple Telegram bot that gives users the ability to use markdown.
 """
 
-import os
 import urllib
 import cStringIO
 from PIL import Image
 from telegram import Updater, InlineQueryResultArticle, InlineQueryResultPhoto
+from ConfigParser import SafeConfigParser
 
-UPDATER = Updater(token=os.environ['TOKEN'])
+parser = SafeConfigParser()
+parser.read('ppbot.conf')
+
+UPDATER = Updater(token=parser.get('updater', 'token'))
 
 
 def inline_pretty(bot, update):
