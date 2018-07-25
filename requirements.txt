@@ -1,4 +1,4 @@
-Pillow==3.1.1
+Pillow==3.3.2
 argparse==1.2.1
 future==0.15.2
 python-telegram-bot==3.3
